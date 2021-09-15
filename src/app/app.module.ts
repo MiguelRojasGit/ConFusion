@@ -13,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 
 import { DishService } from './Services/dish.service';
+import { LeaderService} from './Services/leader.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -24,6 +25,7 @@ import { FooterComponent } from './footer/footer.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
 
 import { AppRoutingModule } from './app-routing/app-routing.module'
+
 
 @NgModule({
   declarations: [
@@ -49,7 +51,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module'
     FontAwesomeModule,
     AppRoutingModule
   ],
-  providers: [DishService],
+  providers: [DishService,LeaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
