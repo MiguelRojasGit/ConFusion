@@ -1,9 +1,11 @@
 <mat-toolbar color="primary">
-  <span><img src="/assets/images/logo.png" height=30 width=41></span>
-  <a mat-button routerLink="/home" routerLinkActive="active"><span class="fa fa-home fa-lg"></span> Home</a>
-  <a mat-button routerLink="/aboutus" routerLinkActive="active"><span class="fa fa-info fa-lg"></span> About</a>
-  <a mat-button routerLink="/menu" routerLinkActive="active"><span class="fa fa-list fa-lg"></span> Menu</a>
-  <a mat-button routerLink="/contactus" routerLinkActive="active"><span class="fa fa-address-card fa-lg"></span> Contact</a>
+  <span><img src="/assets/images/logo1.png" height=30 width=41></span>
+  <a mat-button routerLink="/home" routerLinkActive="active"><span class="fa fa-home fa-lg"></span> Inicio</a>
+  <a mat-button routerLink="/menu" routerLinkActive="active"><span class="fas fa-cart-plus fa-lg"></span> Catalogo</a>
+  <a mat-button routerLink="/domicilio" routerLinkActive="active"><span class="fas fa-truck fa-lg"></span> Domicilio</a>
+  <a mat-button routerLink="/atencion" routerLinkActive="active"><span class="fas fa-headset fa-lg"></span>   Atencion al Cliente</a>
+  <span class="flex-spacer"></span>
+  <a mat-button (click)="openLoginForm()"><span class="fas fa-sign-in-alt fa-lg"></span> Ingresar</a>
 </mat-toolbar>
 
 <div class="container jumbotron"
@@ -13,16 +15,15 @@
     fxLayoutAlign.xs="start center"
     fxLayoutAlign.sm="start center"
     fxLayoutAlign.gt-sm="center center"
-    fxLayoutGap="10px">
+    fxLayoutGap="30px">
 
-  <div fxFlex fxFlex.gt-sm="50%">
-    <h1>Ristorante Con Fusion</h1>
+  <div fxFlex fxFlex.gt-sm="40%">
+    <h1>Tienda de Mascotas </h1>
 
-    <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations
-      will tickle your culinary senses!</p>
+    <h4>Las mejores marcas especializadas en alimento, accesorios, e higiene para perros y gatos ahora al alcance de solo un click. Haz tu compra y recibe tus productos en la puerta de tu casa sin ningún recargo de envío en la ciudad de Bogotá. Solicita una asesoría gratuita y haz parte de la familia de FPets.</h4>
   </div>
-  <div fxFlex fxFlex.gt-sm="20%">
-    <img src="/assets/images/logo.png" alt="Logo">
+  <div fxFlex fxFlex.gt-sm="30%">
+    <img src="/assets/images/logo1.png" alt="Logo">
   </div>
   <div fxFlex></div>
 </div>

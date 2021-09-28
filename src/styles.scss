@@ -20,15 +20,22 @@ $divider-color:        #BDBDBD;
 @mixin zero-margin($pad-up-down, $pad-left-right) {
     margin: 0px auto;
     padding: $pad-up-down $pad-left-right;
+
 }
 body {
   padding: 0;
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif; }
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+   }
+
+
 
 .container {
-  margin: 20px;
+  margin: 0px;
   display:flex;
+  background-color: #f8efff;
+  padding: 5px;
+
 }
 
 .background-primary {

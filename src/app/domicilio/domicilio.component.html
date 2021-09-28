@@ -1,0 +1,93 @@
+<h2><span class="fas fa-shipping-fast fa-lg"></span>     Revisa tu entrega y los detalles de tu pedido:</h2>
+
+
+<mat-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Digita tu nombre y apellido</ng-template>
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="Nombre apellido" formControlName="firstCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Siguiente</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" label="Digita tu numero de Identificacion">
+    <form [formGroup]="secondFormGroup">
+      <mat-form-field appearance="fill">
+        <mat-label>N° Identificacion</mat-label>
+        <input matInput formControlName="secondCtrl" placeholder="Numero Identificacion"
+               required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Volver</button>
+        <button mat-button matStepperNext>Siguiente</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" label="Digita tu numero de referencia">
+    <form [formGroup]="secondFormGroup">
+      <mat-form-field appearance="fill">
+        <mat-label>N° Referencia</mat-label>
+        <input matInput formControlName="secondCtrl" placeholder="Numero Referencia"
+               required [(ngModel)]="ref">
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Volver</button>
+        <button mat-button matStepperNext>Siguiente</button>
+        <button mat-raised-button (click)="getOrder()">
+          Consultar</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Terminado</ng-template>
+
+
+    <div class="container"
+fxLayout="row wrap"
+fxLayout.sm="column"
+fxLayout.xs="column"
+fxLayoutAlign.gt-md="space-around center"
+fxLayoutGap="10px"
+fxLayoutGap.xs="10px">
+
+      <div fxFlex="60" fxFlex.gt-sm="40%">
+      <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <h2>Descripcion</h2>
+            </mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src='../../assets/images/pedigree.jpg' alt=''  >
+          <mat-card-content>
+            <p>Pedido #
+            </p>
+          </mat-card-content>
+          </mat-card>
+        </div>
+        <div fxFlex="40" fxFlex.gt-sm="40%" >
+          <mat-card>
+          <mat-card-header>
+            <mat-card-title>
+              <h2 >Detalle del pedido # {{ref}}</h2>
+                </mat-card-title>
+              </mat-card-header>
+              <mat-card-content >
+                <p *ngFor="let item2 of message2 | keyvalue">
+                  {{item2.value}}
+                </p>
+              </mat-card-content>
+              </mat-card>
+            </div>
+    </div>
+    <div>
+      <button mat-button matStepperPrevious>Volver</button>
+      <button mat-button (click)="stepper.reset()">Limpiar</button>
+    </div>
+  </mat-step>
+</mat-stepper>
+

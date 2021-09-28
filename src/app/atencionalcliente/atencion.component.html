@@ -1,0 +1,79 @@
+<div class="container"
+  fxLayout="column"
+  fxLayoutGap="10px">
+  <div fxFlex fxFlexOffset="20px" class="form-size">
+    <h2>Ponte en contacto con Family Pets</h2>
+    <p>Alguno de nuestros asesores recibira tu peticion y se pondra en contacto contigo. </p>
+    <!--<p>{{ contactinfoForm.value | json }} {{ contactinfoForm.status | json }}</p>-->
+
+    <form novalidate [formGroup]="contactinfoForm" (ngSubmit)="onSubmit()">
+      <p>
+        <mat-form-field class="half-width">
+          <input matInput formControlName="firstname" placeholder="Nombre" type="text">
+        </mat-form-field>
+        <mat-form-field class="half-width">
+          <input matInput formControlName="lastname" placeholder="Apellido" type="text">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="half-width">
+          <input matInput formControlName="telnum" placeholder="Telefono" type="tel">
+        </mat-form-field>
+        <mat-form-field class="half-width">
+          <input matInput formControlName="email" placeholder="Email" type="email">
+        </mat-form-field>
+      </p>
+      <table class="form-size">
+        <td>
+          <mat-slide-toggle formControlName="agree">Podemos contactarnos contigo?</mat-slide-toggle>
+        </td>
+        <td>
+          <mat-select style="width:140px" placeholder="De que manera?" formControlName="contacttype" >
+            <mat-option *ngFor="let ctype of contactType" [value]="ctype">
+              {{ ctype }}
+            </mat-option>
+          </mat-select>
+        </td>
+        </table>
+      <p>
+        <mat-form-field class="full-width">
+          <textarea matInput formControlName="message" placeholder="Dejanos tu mensaje:" rows=12></textarea>
+        </mat-form-field>
+      </p>
+
+      <button mat-stroked-button (click)="openSnackBar()" aria-label="Show an example snack-bar" class="background-primary text-floral-white">
+        Enviar
+      </button>
+    </form>
+  </div>
+
+
+  <div fxFlex>
+    <hr>
+
+    <div fxLayout="column" fxLayout.gt-sm="row">
+      <div fxFlex="30" fxFlexOffset="20px">
+        <h2>Ubicacion Tienda</h2>
+        <address>
+          Cra 9 Este # 35-32<br>
+          Barrio, 20 de Julio<br>
+          BOGOTA<br>
+          <i class="fa fa-phone"></i>: +57 301299 2207<br>
+          <i class="fa fa-fax"></i>: +52 876544 4321<br>
+          <i class="fa fa-envelope"></i>:
+                <a href="mailto:pets@mascotas.net">pets@mascotas.net</a>
+        </address>
+        <p></p>
+        <div>
+          <a mat-raised-button href="tel:+85212345678"><i class="fa fa-phone"></i> Call</a>
+          <a mat-raised-button><i class="fa fa-skype"></i> Skype</a>
+          <a mat-raised-button href="mailto:confusion@food.net"><i class="fa fa-envelope-o"></i> Email</a>
+        </div>
+        </div>
+      <div fxFlex="40">
+        <h3>Ubicacion en el Mapa</h3>
+          <img src="/assets/images/mapa.jpg" alt="Mapa" height="230">
+      </div>
+    </div>
+  </div>
+</div>
